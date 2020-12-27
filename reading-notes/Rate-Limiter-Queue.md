@@ -43,3 +43,21 @@ For Queue to get engaged you need the following.  You need to call _queueRequest
 i. queue.length > 0
 ii. consume throws an error.  The only way that this will happen
 res.consumedPoints > this.points
+
+this.points - is passed in from decorator.
+pointsToConsume is passed into the consume function from intercepter and is always 1. consumedpoints is always 1.
+
+
+# Queue Issuesgit 
+1. Inside responseHandler at line 201, if they queue is enabled it will call removeTokens from the queueLimiter.  And will pass the value 1
+```
+await this.queueLimiter.removeTokens(1)
+```
+2. If tokens (always 1) is greater than _this.limiterFlexible.points) -- line 65 of RateLimiterQueue than it will throw an exception.  The only way for this to happen is if points added is 0
+
+3. If the queue length is greater than 0 it will add the request to the queue
+
+4. It will limiterFlexibile call consume .  In the consume function (RateLimiterMemory)
+
+5. There are only 3 options that the queue gets enabled
+i. consumedPoints > 
