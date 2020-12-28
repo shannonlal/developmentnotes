@@ -49,8 +49,29 @@ iv. verify the clientData.origin and config.origin
 v. verify authenticator attestation response
 
 ## generate Server Make Cred Request
+i. this will return an object which has the following parameters
+- challenge -- Random challenge
+- rp - 
+- user.id,
+- user.name,
+- user.displayName,
+- attestation: direct?
+- pubKeyCredParams.type
+
+-- TODO need to investigation
 
 ## generate Server Get Assertion
+-- Returns an object with the following attributes
+{
+ - challenge - a random number
+ - allowCredentials
+
+}
+
+-- allowCredential is an array of objects with the following
+- type
+- id
+- transports
 
 ## verifyAuthenticatorAssertionResponse
 
