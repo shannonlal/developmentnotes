@@ -7,6 +7,7 @@ https://webauthn.io/
 
 # Need to reseach information about make credentials challenge
 
+https://github.com/nodkz/mongodb-memory-server
 
 
 # First step is to register and some how pass credentials
@@ -35,9 +36,31 @@ iv. Submit request challenge in request.session
 v. Return the response json.  Register returns the server make cred request
 
 ## Login API
-
+i. verify the username has been defined
+ii. check the database that the credentials match
+iii.  generateServerMakeGetAssertion - Get is different
+iv. request username response
 
 ## Response 
+i. verify parameters are passed - rawId, id, response, type
+ii. Client Data -- webauthn response clientDataJSON
+iii. verity that the clientData.challenge matches the request.session.challenge
+iv. verify the clientData.origin and config.origin
+v. verify authenticator attestation response
 
 ## generate Server Make Cred Request
 
+## generate Server Get Assertion
+
+## verifyAuthenticatorAssertionResponse
+
+
+# TODO
+## Research WebAuthn example with Angular/NestJS.  Question is this worth it?
+
+## Finish reading up on generate server make cred request methods
+
+## Fix local authentication issue
+
+## Read documents on web
+https://webauthn.guide/
