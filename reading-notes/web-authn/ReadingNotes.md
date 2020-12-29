@@ -133,3 +133,27 @@ i. The field describes the key type
 ii. The 3 field describes the algorithm used to generate authentication signatures
 iii.  -1 field describes the key's curve type.  The value 1 indicates the that this key uses the P-256
 iv. The -2 field describes the x-coordinate of this public key
+
+
+# Authenticating with a webauthn credential
+During authentication an assertion is created which is proof that the user has posession of the private key.  This assertion contains a signature created using the private key.  The server uses the public key retrieved during the registation to verify the signation
+
+## navigator.credentials.get()
+During authentication the user proves they own the private key they registered with.  They do so by providining and assertion which is generate by calling navigator.credentials.get()
+
+## publicKeyCredentialsCreationOptions
+This function provides a number of required and option fields that a server specifies to create a new credential for a user
+- challenge - Like during registration this must be cryptographically random bytes 
+- allowCredentials - This array tells the browser which credentials user to autehnticate with.
+- timeout - 
+
+Spec Attestation
+i attestation statement verifiable by the WebAuthn Replying Party.
+
+# Supported Formats
+https://www.iana.org/assignments/webauthn/webauthn.xhtml
+i. android-key Platform-provided authenticators based on versions 'N' abnd lateer.  May provide thsi proprietyr hardware attestation
+ii. android-safetynet - Android based platform-provided authenticators MAY
+iii. fido-u2f Used with FIDO U2F authenticators
+iv. packed - The attestation statement format is a WebAuthn-optimized format for attestation. It uses a very compact but still extensible encodeing method 
+v. The TPM attestation statement format returns an attestation in the 
