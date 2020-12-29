@@ -112,3 +112,24 @@ rawId -- Id again but in binary form
 attestationObject - {
     credential public key and optiona attetestation certificate.
 }
+
+# Parsing and Validating the Registration Data
+1. clientDataJSON is parsed by converting the UTF-8 byte arry provided by the authenticator into a parsable string
+Elements
+-- challenge - this is the same challenge that was passed into the create call.  the server must validate that this returned challenge matches
+-- orgin - the server must validate that this origin string matches up with the origin
+
+
+2. Parsing the attestationObject
+- authData -- authenticator data is here is a byte array that contains meta data about the registration event
+- fmt - The represents the attestation format.  This shows how the server should parse and validate the data
+- attStmt - This is the data to verify the attestation
+
+3. Parsing authenticator data
+- authdata - byte aray described in the spec.  Parsing this splits the bytes from array into using objects
+- publicKeyObject
+- c
+i. The field describes the key type
+ii. The 3 field describes the algorithm used to generate authentication signatures
+iii.  -1 field describes the key's curve type.  The value 1 indicates the that this key uses the P-256
+iv. The -2 field describes the x-coordinate of this public key
