@@ -17,4 +17,17 @@ platform (touch id)
 
 # Issues with webauthn client
 1. Missing Apple Implementation
-2. Intertwined the 
+2. Intertwined the Client with API calls.  They should be seperate
+3. Should use typescript with better types
+4. Should be built with a library
+
+## Library
+-- Client
+Webauthn -> getAssertionChallenge
+Webauthn -> getAttesetationChallenger
+Webauthn -> Typescript Types
+-- Use Unit Test
+
+-- Server Library
+AssertionChallengeBuilder
+AttestationChallengeBuilder
