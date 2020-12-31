@@ -31,3 +31,11 @@ Webauthn -> Typescript Types
 -- Server Library
 AssertionChallengeBuilder
 AttestationChallengeBuilder
+
+- Build using JEST
+- Should have React Version
+- Should have Angular Version
+- Should store credentials in mongo in memory
+
+
+TODO: Check difference on Safari why we are getting different options
