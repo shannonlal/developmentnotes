@@ -3,6 +3,8 @@ Replying Parts perform two distnct acts
 
 Sample Repo
 https://github.com/strangerlabs/webauthn/blob/master/src/Webauthn.js
+
+Looking at the above code and it looks like it needs a bunch of work.
 # Terminology
 ## Attestation - authenicate 
 
