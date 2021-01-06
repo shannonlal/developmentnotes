@@ -15,7 +15,24 @@ https://simplewebauthn.dev/docs/advanced/supported-devices
 ### UI Changes
 To take advantage of the UI changes, it rely's on browsers that support the Web Authentication API.  From some of the code that I have seen it is possible to detect which browsers support this feature and it should be straight forward for us to enable this for certain browsers.
 
+The following is a sample UI implementation that I was able to play with
 
+The following is a sample ![login page](./images/registration/home.png)
+
+The User will click on the register button
+![Start Registration](./images/registration/2-register.png)
+
+The User will select authentication mechanism
+![Select Authentication](./images/registration/3-select-touch-id.png)
+
+The User will enter their touch id
+![Enter Touch Id](./images/registration/4-display-selection.png)
+
+The User will allow touch Id to be used
+![Authorize Touch Id](./images/registration/5-allow-touch-id.png)
+
+Confirmation of Registration
+![Confirmation](./images/registration/6-confirmation.png)
 
 ## Supported libraries
 
