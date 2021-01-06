@@ -18,3 +18,24 @@ To take advantage of the UI changes, it rely's on browsers that support the Web 
 
 
 ## Supported libraries
+
+Simple Webauthn
+https://simplewebauthn.dev/docs/advanced/example-project
+
+WebAuthn Guide
+https://webauthn.guide/
+
+Webauth.io
+https://webauthn.io/
+
+Java Sample Project
+https://github.com/duo-labs/android-webauthn-authenticator
+
+Java Sample Project - Google
+https://github.com/google/webauthndemo
+
+Java Sample Project - 
+https://github.com/Yubico/java-webauthn-server
+
+Javascript Sample Project
+https://github.com/fido-alliance/webauthn-demo
