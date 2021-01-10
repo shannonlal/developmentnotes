@@ -10,6 +10,19 @@ Touch Id authentication works on using a new web standard called Web Authenticat
 -- Main problem with password is that it is a shared secret (i.e. between the user and the website).  So if it is stolen from the server they have their password. 
 
 - web auth
+It allows servers to integrate with strong authenticates no in devices (Apple Touch Id).  It uses a private-public keypair (known as credential) for a website.  The private key is stored securly on the user's device.  A public key and a randomly generated credential ID is sent to the server for storage.  The server then uses the public key to provde the user's identifie
+
+
+### Part 1 - Generate Attestation Options
+The first part is to generate the attestation options (used before the registration option).  It will provide the following key elements:
+- challenge - random number generated on the server
+- reply party - Authenticator
+- timeout
+- public Key Credential Parameters -- An Array of Public Key Credniatial Types that are acceptable on the server.  Notes: alg -- described in the COSE Registration
+
+### Part 2 - Verify Attestation - i.e. (Registration)
+
+
 
 ## Client(Device) side work.  How does the encryption process work
 
