@@ -22,7 +22,19 @@ The first part is to generate the attestation options (used before the registrat
 
 ### Part 2 - Verify Attestation - i.e. (Registration)
 
+The client will generate a public key.  To generate a key it needs the following information
 
+-- challenge - from server
+-- userId
+-- id ? - Is the ID for the uniquely generated Id
+-- response ?
+---- clientDataJSON - Contains type, origin, challenge - This was passed from the server
+---- attestationObject - The Public Key
+-- type ?
+
+
+
+### Part 3 - Verify Assertion - i.e. (Login)
 
 ## Client(Device) side work.  How does the encryption process work
 
