@@ -36,6 +36,23 @@ The client will generate a public key.  To generate a key it needs the following
 
 ### Part 3 - Verify Assertion - i.e. (Login)
 
+### Assertion Options
+-- Pass in the user Id
+-- Get the Challenge Id
+-- Get the Unique ID of the credential based on the user name
+
+### Assertation Verify
+-- Pass the public key to -- Which includes the challenge and the id of the credentials
+
+```
+  const credential = (await navigator.credentials.get({ publicKey })) as AssertionCredential;
+```
+
+### Verify the assertation on the server
+
+-- Does a look of the public key and does a verification
+
+Assertaion Verify
 ## Client(Device) side work.  How does the encryption process work
 
 ## Registration Process
