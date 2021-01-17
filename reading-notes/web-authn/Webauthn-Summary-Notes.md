@@ -1,8 +1,13 @@
-# Here are the summary notes
-## Overview of how it works
-Touch Id authentication works on using a new web standard called Web Authentication API that has been implemented in certain browsers (see supprted devices below).  the Web Authentication Standard uses a public-private key as a credential to authenticate users onto a site.  When a user first registers with a site the browser will create a public-private key pair.  The public key is then transmitted to ther server (during registration) and is stored on the server (i.e. database).  When the user attempts to login into the site again, the browser will submit the public key to the server and it will check to ensure that it is valid.   
+# TODO:
+1. Finish images from lucid chart
+2. Confirm Parameters
+3. 
 
-## What are security options
+# WebAuthn
+## Overview of how it works
+Touch Id authentication works by using a new web standard called Web Authentication API that has been implemented in certain browsers (see supprted devices below).  The Web Authentication Standard uses a public-private key as a credential to authenticate users onto a site.  When a user first registers with a site, the browser will create a public-private key pair.  The public key is then transmitted to ther server (during registration) and is stored on the server (i.e. database).  When the user attempts to login into the site again, the browser will submit the public key to the server and it will check to ensure that it is valid.   
+
+## Why Webauthn is more secure
 ### username/password
 
 -- users need to worry about them being stolen by phising tools
@@ -10,11 +15,12 @@ Touch Id authentication works on using a new web standard called Web Authenticat
 -- Main problem with password is that it is a shared secret (i.e. between the user and the website).  So if it is stolen from the server they have their password. 
 
 - web auth
-It allows servers to integrate with strong authenticates no in devices (Apple Touch Id).  It uses a private-public keypair (known as credential) for a website.  The private key is stored securly on the user's device.  A public key and a randomly generated credential ID is sent to the server for storage.  The server then uses the public key to provde the user's identifie
+It allows servers to integrate with strong authenticators no devices (Apple Touch Id, USB Keys).  It uses a private-public keypair (known as credential) for a website.  The private key is stored securly on the user's device.  A public key and a randomly generated credential ID is sent to the server for storage.  The server then uses the public key to provde the user's identifie
 
-
+# WebAuthn Authentication Process
+## Registration
 ### Part 1 - Generate Attestation Options
-The first part is to generate the attestation options (used before the registration option).  It will provide the following key elements:
+The first part is to generate the attestation options (used before the registration option).  This is generated on the server and provides the client key information about what types of authentication methods are supported.  It will provide the following key elements:
 - challenge - random number generated on the server
 - reply party - Authenticator
 - timeout
@@ -22,7 +28,7 @@ The first part is to generate the attestation options (used before the registrat
 
 ### Part 2 - Verify Attestation - i.e. (Registration)
 
-The client will generate a public key.  To generate a key it needs the following information
+The client will generate a public-key pair on the trusted device and willl send the following information to the server during the registration process:  
 
 -- challenge - from server
 -- userId
@@ -34,9 +40,9 @@ The client will generate a public key.  To generate a key it needs the following
 
 
 
-### Part 3 - Verify Assertion - i.e. (Login)
+## Login
 
-### Assertion Options
+### Part 1 - Get Assertion Options
 -- Pass in the user Id
 -- Get the Challenge Id
 -- Get the Unique ID of the credential based on the user name
