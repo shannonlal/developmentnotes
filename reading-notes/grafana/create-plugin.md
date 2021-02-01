@@ -90,3 +90,13 @@ interface Field {
 ```
 
 # Configure a Data Soruce
+
+
+# Focus
+1. Get Grafana server installed locally
+2. Data sources to integrate
+-- MongoDB
+-- github
+-- JIRA
+-- Dynatrace
+-- Apigee
